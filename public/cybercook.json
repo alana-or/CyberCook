@@ -1,0 +1,87 @@
+{
+  "recipes": [
+    {
+    	"image": "https://img.cybercook.uol.com.br/imagens/receitas/202/frango-a-parmegiana-305x200.jpg",
+    	"link": "https://cybercook.uol.com.br/frango-a-parmegiana-r-4-15202.html",
+    	"title": "Frango à Parmegiana",
+      "rating": 3
+    }, {
+    	"image": "https://img.cybercook.uol.com.br/imagens/receitas/859/file-de-frango-a-milanesa-4-305x200.png",
+    	"link": "https://cybercook.uol.com.br/receita-de-file-de-frango-a-milanesa-r-4-859.html",
+    	"title": "Filé de Frango à Milanesa",
+      "rating": 0
+    }, {
+    	"image": "https://img.cybercook.uol.com.br/imagens/receitas/586/frango-assado-com-limao-siciliano-305x200.jpg",
+    	"link": "https://cybercook.uol.com.br/receita-de-frango-assado-com-limao-siciliano-r-4-14586.html",
+    	"title": "Frango Assado com Limão Siciliano",
+      "rating": 3
+    }, {
+    	"image": "https://img.cybercook.uol.com.br/imagens/receitas/137/almondega-no-microondas-305x200.jpg",
+    	"link": "https://cybercook.uol.com.br/almondega-no-microondas-r-3-11137.html",
+    	"title": "Almôndega no Microondas",
+      "rating": 5
+    }, {
+    	"image": "https://img.cybercook.uol.com.br/imagens/receitas/723/carne-louca-305x200.jpg",
+    	"link": "https://cybercook.uol.com.br/carne-louca-r-3-15723.html",
+    	"title": "Carne Louca",
+      "rating": 5
+    }, {
+    	"image": "https://img.cybercook.uol.com.br/imagens/receitas/205/kibe-de-forno-receita-da-vovo-lola-305x200.jpg",
+    	"link": "https://cybercook.uol.com.br/receita-de-kibe-de-forno-receita-da-vovo-lola-r-3-21205.html",
+    	"title": "Kibe de Forno (receita da Vovó Lola)",
+      "rating": 4
+    }, {
+    	"image": "https://img.cybercook.uol.com.br/receitas/279/bobo-de-camarao-11-305x200.jpeg",
+    	"link": "https://cybercook.uol.com.br/bobo-de-camarao-r-6-11279.html",
+    	"title": "Bobó de Camarão",
+      "rating": 5
+    }, {
+    	"image": "https://img.cybercook.uol.com.br/receitas/986/file-de-merluza-frito-1-305x200.jpeg",
+    	"link": "https://cybercook.uol.com.br/file-de-merluza-frito-r-6-10986.html",
+    	"title": "Filé de Merluza Frito",
+      "rating": 4
+    }, {
+    	"image": "https://img.cybercook.uol.com.br/receitas/574/baiao-de-dois-com-sardinha-305x200.jpeg",
+    	"link": "https://cybercook.uol.com.br/receita-de-baiao-de-dois-com-sardinha-r-6-121574.html",
+    	"title": "Baião de Dois com Sardinha",
+      "rating": 5
+    }, {
+    	"image": "https://img.cybercook.uol.com.br/receitas/2/lasanha-de-frango-305x200.jpeg",
+    	"link": "https://cybercook.uol.com.br/lasanha-de-frango-r-5-14002.html",
+    	"title": "Lasanha de Frango",
+      "rating": 3
+    }, {
+    	"image": "https://img.cybercook.uol.com.br/receitas/300/nhoque-de-mandioquinha-com-ragu-de-fraldinha-305x200.jpeg",
+    	"link": "https://cybercook.uol.com.br/receita-de-nhoque-de-mandioquinha-com-ragu-de-fraldinha-r-5-121300.html",
+    	"title": "Nhoque de Mandioquinha com Ragu de Fraldinha",
+      "rating": 5
+    }, {
+    	"image": "https://img.cybercook.uol.com.br/receitas/501/macarrao-com-lingueica-de-calabresa-1-305x200.jpeg",
+    	"link": "https://cybercook.uol.com.br/receita-de-macarrao-com-linguica-de-calabresa-r-5-12501.html",
+    	"title": "Macarrão com Linguiça de Calabresa",
+      "rating": 3
+    }
+  ],
+  "foodiefeed": [
+    {
+		  "image": "https://img.cybercook.uol.com.br/foodiefeed/n2td1evxdiakmo04nlzv5x0iinh252hza3h4cq5j.jpeg",
+		  "title": "5 vantagens de fazer mercado online  no Fim de Ano",
+      "link": "https://cybercook.uol.com.br/5-vantagens-de-fazer-mercado-online-no-fim-de-ano-m-310-2169.html"
+	  },
+    {
+		  "image": "https://img.cybercook.uol.com.br/foodiefeed/7gstowihbinraj9afmficeoqcq7ryatv3yezytoc.jpeg",
+		  "title": "Dicas saudáveis e divertidas para as crianças com Teflon™",
+      "link": "https://cybercook.uol.com.br/dicas-saudaveis-e-divertidas-para-as-criancas-com-teflon-m-310-2168.html"
+	  },
+    {
+      "image": "https://img.cybercook.uol.com.br/foodiefeed/zfjuunpa7kc6tbcszqss7fh8mqlvsmxbapxtzxwt.jpeg",
+      "title": "7 dicas para limpar a cozinha mais rápido com Teflon™",
+      "link": "https://cybercook.uol.com.br/7-dicas-para-limpar-a-cozinha-mais-rapido-com-teflon-m-310-2167.html"
+    },
+    {
+      "image": "https://img.cybercook.uol.com.br/publicidades/destaque-infografico-barilla.jpeg",
+      "title": "Coma igual aos italianos, todos os dias!",
+      "link": "https://cybercook.uol.com.br/coma-igual-aos-italianos-todos-os-dias-m-310-2165.html"
+    }
+  ]
+}

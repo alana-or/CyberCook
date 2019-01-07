@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app"></div>
+
+  <script id="teste" type="text/template">
+    {{ #recipes }}
+      <div>
+        <a href="{{ link }}">
+          <h1>{{ title }}</h1>
+          <img src="{{ image }}" alt="">
+          <div>{{ rating }}</div>
+        </a>
+      </div>
+    {{ /recipes }}
+  </script>
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+
+<script type="text/javascript">
+  $(function() {
+
+    $.getJSON('cybercook.json', function(data){
+      var template = $('#teste').html();
+      var html = Mustache.to_html(template, data);
+      $('#app').html(html);
+    });
+
+  });
+</script>
+</body>
+</html>

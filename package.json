@@ -1,0 +1,20 @@
+{
+  "name": "teste-front-end",
+  "version": "1.0.0",
+  "description": "1. Desenvolver a página seguindo o PSD **home.psd**  2. Desenvolver o Javascript que faça uma requisição para **/cybercook.json**     * Apresentar os dados requisitados no layout",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/emidia/teste-front-end.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/emidia/teste-front-end#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
