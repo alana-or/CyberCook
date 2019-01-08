@@ -4,7 +4,10 @@
   font-family: 'Kadwa', Georgia, serif;
 }
 .top {
-  margin: 20px 0;
+  margin-top: 20px;
+}
+.top img {
+  width: 100%;
 }
 .alert {
   height: 18px;
@@ -27,7 +30,7 @@
   text-align: right;
 }
 .margin-top-social {
-  margin: 20px 0;
+  margin-top: 20px;
 }
 .icon {
   float: right;
@@ -46,6 +49,10 @@ nav ul li {
 nav ul li a {
   color: #e75024;
   font-size: 18px;
+}
+#nav {
+  background: #fff;
+  z-index: 999;
 }
 .search-icons .fas {
   color: #fa9e22;
@@ -93,6 +100,16 @@ nav ul li a {
   color: #fff;
   background: url("../img/bolo_chocolate_banner.jpg") no-repeat;
   background-size: 100%;
+}
+.main-banner .question i {
+  right: 0;
+  top: 0;
+  display: inline;
+  float: none;
+  padding: 1px 6px;
+  font-size: 14px;
+  font-family: calibri;
+  background: #1f876a;
 }
 .main-banner .nota {
   float: right;
@@ -142,6 +159,22 @@ nav ul li a {
 .foodie img {
   width: 100%;
 }
+.foodie .frame {
+  width: 100%;
+  height: 175px;
+  overflow: hidden;
+}
+.foodie p {
+  padding: 0px 0 20px 0;
+}
+.foodie h2 {
+  color: #1e8367;
+}
+.foodie h3 {
+  color: #111;
+  margin-top: 5px;
+  font-weight: 100;
+}
 .recipes {
   float: left;
   margin-bottom: 20px;
@@ -178,4 +211,71 @@ nav ul li a {
 }
 .recipes img {
   width: 100%;
+}
+.nav-mobile {
+  float: left;
+  font-size: 30px;
+  margin-right: 10px;
+}
+.nav-mobile .fa-bars {
+  vertical-align: sub;
+}
+.nav-mobile-open {
+  position: fixed;
+  height: 100%;
+  width: 85%;
+  background: #ccc;
+  z-index: 99;
+  margin: 0;
+  padding: 10px;
+}
+.nav-mobile-open li {
+  width: 100%;
+  float: left;
+  padding: 10px;
+}
+@media screen and (max-width: 1199px) {
+  .foodie .frame {
+    height: 145px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .foodie .frame {
+    height: 105px;
+  }
+}
+#nav-mobile {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .foodie .frame {
+    height: auto;
+  }
+  .hidden-xs {
+    display: none !important;
+  }
+  #nav-mobile {
+    display: block;
+  }
+  .nav {
+    background: #ccc;
+    margin: 10px -15px;
+    padding: 10px;
+  }
+  .nav div {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .nav img {
+    width: 40px;
+  }
+  .logo {
+    width: 30%;
+    float: left;
+  }
+  .margin-top-social {
+    width: 70%;
+    float: left;
+    margin-top: 10px;
+  }
 }
