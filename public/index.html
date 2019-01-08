@@ -5,21 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bootstrap.grid.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Kadwa" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <div id="app"></div>
-
-  <script id="teste" type="text/template">
-    {{ #recipes }}
-      <div>
-        <a href="{{ link }}">
-          <h1>{{ title }}</h1>
-          <img src="{{ image }}" alt="">
-          <div>{{ rating }}</div>
-        </a>
+  <div class="container">
+    <div class="row">
+      <div class="top col-xs-12 text-center">
+        <img src="img/banner_top.jpg" alt="seara">
       </div>
-    {{ /recipes }}
+    </div>
+    <div class="row">
+      <div class="col-xs-2 col-md-1">
+        <img src="img/cybercook.png" alt="cybercook">
+      </div>
+      <div class="col-xs-10 col-md-11 margin-top-social">
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="social">
+                Siga-nos: 
+              <a href=""><img src="img/facebook.png" alt="facebook"></a>
+              <a href=""><img src="img/pinterest.png" alt="pinterest"></a>
+              <a href=""><img src="img/youtube.png" alt="youtube"></a>
+              <a href=""><img src="img/instagram.png" alt="instagram"></a>
+              <a href=""><img src="img/twitter.png" alt="twitter"></a>
+              <a href=""><img src="img/google+.png" alt="google plus"></a>
+            </div>
+          </div>
+          <div class="search-icons col-xs-8 text-right">
+              <div class="button red">Crie seu Livro</div>
+              <div class="button orange space">
+                <i class="fas fa-heart"></i>
+                Livro de Receitas
+              </div>
+              <div class="icon">
+              <i class="fas fa-bell"></i>
+                <span class="alert">1</span>
+              </div>
+              <div class="icon">
+                <i class="fas fa-search"></i>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <nav>
+              <ul>
+                <li><a href="">Receitas</a></li>
+                <li><a href="">CookClub</a></li>
+                <li><a href="">#foodieFeed</a></li>
+                <li><a href="">#TeamCook</a></li>
+                <li><a href="">Vídeos</a></li>
+                <li><a href="">Pergunte à comunidade!</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div class="main-banner">
+          <h1>Encontre receitas deliciosas!</h1>
+          <div>
+            <input type="text" placeholder="Nome ou ingredientes">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="search">
+            <span>Sugestão do Chef: <i class="alert">?</i></span>
+          </div>
+          <div>
+            <span class="orange">Costela Marinada</span>
+            <span class="orange">Batatas recheadas</span>
+            <span class="orange">Omelete</span>
+            <span class="orange">Bacalhau</span>
+          </div>
+          <div class="nota">
+            <strong>Receita do dia:</strong> Coxinhas de Frango Fritas com alho <img src="img/seara.png" alt="seara">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="app"></div>
+  </div>
+
+  <script id="home" type="text/template">
+    
+      <div class="row">
+        {{ #recipes }}
+          <article class="recipes col-xs-4">     
+            <div class="shadow"></div>
+            <a href="{{ link }}" alt="{{ title }}">
+              <div class="card">
+                <h3>{{ title }}</h3>
+                
+                {{ #rating }}              
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>&nbsp;&nbsp;{{ rating }}
+                  <div class="hidden user">
+                    <img src="img/user.png" alt="usuário">
+                    <p>Elaine Monteiro</p>
+                    <i class="fas fa-heart"></i>
+                  </div>
+                </div>
+                {{ /rating }}
+
+              </div>
+              <img src="{{ image }}" alt="{{ title }}">
+            </a>
+          </article>
+        {{ /recipes }}
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>#foodiefeed</h2>
+          <p>As tendências na cozinha, inovações na alimentação e muito mais</p>
+        </div>
+      </div>
+      <div class="row">
+        {{ #foodiefeed }}
+          <article class="foodie col-xs-3">
+            <a href="{{ link }}">
+              <img src="{{ image }}" alt="">
+              <h3>{{ title }}</h3>
+            </a>
+          </article>
+        {{ /foodiefeed }}
+      </div>
   </script>
   
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -29,7 +147,7 @@
   $(function() {
 
     $.getJSON('cybercook.json', function(data){
-      var template = $('#teste').html();
+      var template = $('#home').html();
       var html = Mustache.to_html(template, data);
       $('#app').html(html);
     });
