@@ -12,6 +12,9 @@
     }
 
 }
+a:hover{    
+    text-decoration: none;     
+}
 
 .alert{
     height: 18px;
@@ -41,19 +44,96 @@
 }
 nav{
     margin: 25px 0 0 0;
+    
+    .fa-sort-down{
+        color: #fa9e22;
+        font-size: 12px;
+    }
+
+    // #sub-teamCook{
+    //     width: calc(500px);
+    //     margin-left: 100px;
+    // }
+
+    // #sub-receitas{        
+    //     width: calc(100% + 100px);
+    //     margin-left: -100px;
+    // }
+
+    .sub{    
+        width: calc(100% + 70px);
+        margin-left: -100px;
+        background: #fff;
+        float: left;
+        padding: 20px;
+        position: absolute;
+        z-index: 999;
+        display: none;
+        border: 10px solid #ebebeb;
+
+        > p{                
+            font-size: 18px;
+            font-weight: 500;
+            background: #ebebeb;
+            margin: -20px -20px 10px -20px;
+            padding: 10px;
+        }
+        
+
+            span{
+                float: left;    
+                padding: 10px;
+                width: 120px;
+                height: 150px;
+
+                p{
+                    text-align: center;
+                    font-size: 14px;
+                    color: #e75024;
+                    float: left;
+                    width: 100%;
+                }
+                img{    
+                    display: block;
+                    margin: auto;
+                }
+            }
+    }
 
     ul{
         float: left;
 
+        li:hover{
+            background: #ebebeb;
+            text-decoration: none;  
+            a{
+                
+                text-decoration: none;     
+            }
+            .sub{
+                display: block;
+            }
+        }
+
         li{
             list-style: none;
             display: inline;
-            padding-right: 28px;
+            padding-right: 28px;  
+            padding: 5px 5px 11px 5px;
+            
+            ul{
+                li{
+                    display: block;
+                }
+            }
 
             a{
                 color:#e75024;
                 font-size: 18px;
+                vertical-align: top;    
+                text-decoration: none;            
             }            
+
         }
     }
 }
@@ -373,6 +453,9 @@ nav{
 
         nav ul li {
             padding-right: 10px;
+            a{
+                font-size: 16px;
+            }
         }
     }
 }
@@ -453,8 +536,12 @@ nav{
     }
     
     .nav {    
-        .search-icons .fas {
-            font-size: 30px;
+        .search-icons {
+            margin:3px 10px;
+            .fas {
+                font-size: 30px;
+            }
+
         }
     }
 }

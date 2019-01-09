@@ -9,6 +9,9 @@
 .top img {
   width: 100%;
 }
+a:hover {
+  text-decoration: none;
+}
 .alert {
   height: 18px;
   width: 18px;
@@ -38,17 +41,72 @@
 nav {
   margin: 25px 0 0 0;
 }
+nav .fa-sort-down {
+  color: #fa9e22;
+  font-size: 12px;
+}
+nav .sub {
+  width: calc(100% + 70px);
+  margin-left: -100px;
+  background: #fff;
+  float: left;
+  padding: 20px;
+  position: absolute;
+  z-index: 999;
+  display: none;
+  border: 10px solid #ebebeb;
+}
+nav .sub > p {
+  font-size: 18px;
+  font-weight: 500;
+  background: #ebebeb;
+  margin: -20px -20px 10px -20px;
+  padding: 10px;
+}
+nav .sub span {
+  float: left;
+  padding: 10px;
+  width: 120px;
+  height: 150px;
+}
+nav .sub span p {
+  text-align: center;
+  font-size: 14px;
+  color: #e75024;
+  float: left;
+  width: 100%;
+}
+nav .sub span img {
+  display: block;
+  margin: auto;
+}
 nav ul {
   float: left;
+}
+nav ul li:hover {
+  background: #ebebeb;
+  text-decoration: none;
+}
+nav ul li:hover a {
+  text-decoration: none;
+}
+nav ul li:hover .sub {
+  display: block;
 }
 nav ul li {
   list-style: none;
   display: inline;
   padding-right: 28px;
+  padding: 5px 5px 11px 5px;
+}
+nav ul li ul li {
+  display: block;
 }
 nav ul li a {
   color: #e75024;
   font-size: 18px;
+  vertical-align: top;
+  text-decoration: none;
 }
 #nav {
   margin-bottom: 10px;
@@ -337,6 +395,9 @@ nav ul li a {
   .nav-fixed nav ul li {
     padding-right: 10px;
   }
+  .nav-fixed nav ul li a {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 991px) {
   #nav {
@@ -404,6 +465,9 @@ nav ul li a {
     width: 60%;
     float: left;
     margin-top: 10px;
+  }
+  .nav .search-icons {
+    margin: 3px 10px;
   }
   .nav .search-icons .fas {
     font-size: 30px;
