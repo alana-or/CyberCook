@@ -3,11 +3,56 @@
   padding: 0;
   font-family: 'Kadwa', Georgia, serif;
 }
+a {
+  text-decoration: none;
+}
+a :hover {
+  text-decoration: none;
+}
 .top {
   margin-top: 20px;
 }
 .top img {
   width: 100%;
+}
+.nav #sub-receitas,
+.nav #sub-teamCook,
+.nav #sub-videos,
+.nav #sub-mais {
+  display: none;
+  top: 60px;
+  z-index: 9999;
+  position: fixed;
+}
+.nav .sub {
+  background: #ebebeb;
+  float: left;
+  padding: 20px;
+}
+.nav .sub p {
+  font-size: 18px;
+  font-weight: 500;
+}
+.nav .sub div {
+  background: #fff;
+  float: left;
+  padding: 10px;
+  margin: 5px 0 0 0;
+}
+.nav .sub div span {
+  float: left;
+  padding: 10px;
+  width: 109px;
+}
+.nav .sub div span p {
+  text-align: center;
+  font-size: 14px;
+  color: #e75024;
+  float: left;
+  width: 100%;
+}
+.nav .sub div span img {
+  float: left;
 }
 .alert {
   height: 18px;
@@ -38,17 +83,28 @@
 nav {
   margin: 25px 0 0 0;
 }
+nav .fa-sort-down {
+  color: #fa9e22;
+  font-size: 12px;
+}
 nav ul {
   float: left;
+}
+nav ul li:hover {
+  background: #ebebeb;
+  text-decoration: none;
 }
 nav ul li {
   list-style: none;
   display: inline;
   padding-right: 28px;
+  padding: 5px 5px 11px 5px;
 }
 nav ul li a {
   color: #e75024;
   font-size: 18px;
+  vertical-align: top;
+  text-decoration: none;
 }
 #nav {
   margin-bottom: 10px;
@@ -336,6 +392,9 @@ nav ul li a {
   }
   .nav-fixed nav ul li {
     padding-right: 10px;
+  }
+  .nav-fixed nav ul li a {
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 991px) {

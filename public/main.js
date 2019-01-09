@@ -15,17 +15,7 @@ ourRequest.onerror = function() {
 
 ourRequest.send();
 
-// Handlebars.registerHelper("calculateAge", function(birthYear) {
-//   var age = new Date().getFullYear() - birthYear;
-
-//   if (age > 0) {
-//     return age + " years old";
-//   } else {
-//     return "Less than a year old";
-//   }
-
-// });
-
+//gera as estrelas de acordo com a quantidade de 'likes'
 Handlebars.registerHelper('listRating', function(items) {
     var out = "";
     if(items){
@@ -39,24 +29,70 @@ Handlebars.registerHelper('listRating', function(items) {
     }
   });
 
-function createHTML(petsData) {
+//Cria o template
+function createHTML(Data) {
   var rawTemplate = document.getElementById("home").innerHTML;
   var compiledTemplate = Handlebars.compile(rawTemplate);
-  var ourGeneratedHTML = compiledTemplate(petsData);
+  var ourGeneratedHTML = compiledTemplate(Data);
 
-  var petsContainer = document.getElementById("app");
-  petsContainer.innerHTML = ourGeneratedHTML;
+  var Container = document.getElementById("app");
+  Container.innerHTML = ourGeneratedHTML;
 }
 
+//Efeito de rolagem da página com menu fixo
+window.addEventListener("scroll", function nav(){
+  hide("receitas");
+  hide("videos");
+  hide("teamCook");
+  hide("mais");
 
-function nav(){
-    if(window.scrollY > 50){
+    if(window.scrollY > 30){
         document.getElementById('nav').classList.add("nav-fixed");
-        // document.getElementById('container').classList.add("container");
+        document.getElementById('top').style.display = "none";
     }else{        
         document.getElementById('nav').classList.remove("nav-fixed");
-        // document.getElementById('container').classList.remove("container");
+        document.getElementById('top').style.display = "block";
     }
+});
+
+//Mostra o sub-menu
+function show(item = "receitas"){
+  document.getElementById('sub-'+ item).style.display = "block";
+  document.getElementById(item).style.background = "#ebebeb";
+  
+  if(window.scrollY > 30){
+    document.getElementById('sub-' + item).style.top = "60px";
+  }else{
+    document.getElementById('sub-' + item).style.top = "250px";
+  }
 }
 
-window.addEventListener("scroll", nav);
+//Esconde o sub-menu
+function hide(item = "receitas"){
+  document.getElementById('sub-' + item).style.display = "none";
+  document.getElementById(item).style.background = "#fff";
+}
+
+document.getElementById('receitas').addEventListener("mouseover", function(){show("receitas")});
+document.getElementById('receitas').addEventListener("mouseout", function(){hide("receitas")});
+
+document.getElementById('sub-receitas').addEventListener("mouseover", function(){show("receitas")});
+document.getElementById('sub-receitas').addEventListener("mouseout", function(){hide("receitas")});
+
+document.getElementById('videos').addEventListener("mouseover", function(){show("videos")});
+document.getElementById('videos',).addEventListener("mouseout", function(){hide("videos")});
+
+document.getElementById('sub-videos').addEventListener("mouseover", function(){show("videos")});
+document.getElementById('sub-videos').addEventListener("mouseout", function(){hide("videos")});
+
+document.getElementById('teamCook').addEventListener("mouseover", function(){show("teamCook")});
+document.getElementById('teamCook').addEventListener("mouseout", function(){hide("teamCook")});
+
+document.getElementById('sub-teamCook').addEventListener("mouseover", function(){show("teamCook")});
+document.getElementById('sub-teamCook').addEventListener("mouseout", function(){hide("teamCook")});
+
+document.getElementById('mais').addEventListener("mouseover", function(){show("mais")});
+document.getElementById('mais').addEventListener("mouseout", function(){hide("mais")});
+
+document.getElementById('sub-mais').addEventListener("mouseover", function(){show("mais")});
+document.getElementById('sub-mais').addEventListener("mouseout", function(){hide("mais")});

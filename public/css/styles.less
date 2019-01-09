@@ -3,6 +3,12 @@
     padding:0;
     font-family: 'Kadwa', Georgia, serif;
 }
+a{
+    text-decoration: none;
+    :hover{
+        text-decoration: none;
+    }
+}
 .top{
     margin-top:20px;
     
@@ -12,7 +18,49 @@
     }
 
 }
+.nav{
+    #sub-receitas, #sub-teamCook, #sub-videos, #sub-mais{
+        display: none;     
+        top: 60px;
+        z-index: 9999;
+        position: fixed;
+    }
 
+    .sub{    
+        background: #ebebeb;
+        float: left;
+        padding: 20px;
+
+        p{            
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        div{    
+            background: #fff;
+            float: left;
+            padding: 10px;
+            margin: 5px 0 0 0;
+
+            span{
+                float: left;    
+                padding: 10px;
+                width: 109px;
+
+                p{
+                    text-align: center;
+                    font-size: 14px;
+                    color: #e75024;
+                    float: left;
+                    width: 100%;
+                }
+                img{
+                    float: left;
+                }
+            }
+        }
+    }
+}
 .alert{
     height: 18px;
     width: 18px;
@@ -41,19 +89,33 @@
 }
 nav{
     margin: 25px 0 0 0;
+    
+    .fa-sort-down{
+        color: #fa9e22;
+        font-size: 12px;
+    }
 
     ul{
         float: left;
 
+        li:hover{
+            background: #ebebeb;
+            text-decoration: none;  
+        }
+
         li{
             list-style: none;
             display: inline;
-            padding-right: 28px;
+            padding-right: 28px;  
+            padding: 5px 5px 11px 5px;
 
             a{
                 color:#e75024;
                 font-size: 18px;
+                vertical-align: top;    
+                text-decoration: none;            
             }            
+
         }
     }
 }
@@ -373,6 +435,10 @@ nav{
 
         nav ul li {
             padding-right: 10px;
+            
+            a {
+                font-size: 16px;
+            }
         }
     }
 }
@@ -435,6 +501,7 @@ nav{
                 list-style: none;
                 display: inline;
                 padding-right: 10px;
+                
             }
         }
        
