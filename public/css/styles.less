@@ -12,6 +12,7 @@
     }
 
 }
+
 .alert{
     height: 18px;
     width: 18px;
@@ -47,7 +48,7 @@ nav{
         li{
             list-style: none;
             display: inline;
-            padding-right: 30px;
+            padding-right: 28px;
 
             a{
                 color:#e75024;
@@ -57,10 +58,11 @@ nav{
     }
 }
 #nav{
-    background: #fff;
+    margin-bottom: 10px;
     z-index: 999;
 }
 .search-icons{
+    float: right;
     .fas{
         color:#fa9e22;
         font-size: 33px;
@@ -80,7 +82,7 @@ nav{
 .button{
     float: right;
     border-radius: 30px;
-    display: inline-block !important;
+    display: inline-block;
     padding: 7px 20px;
     cursor: pointer;
     color: #fff;
@@ -200,6 +202,8 @@ nav{
 .recipes{
     float: left;
     margin-bottom: 20px;
+    overflow: hidden;
+
     .fas{
         color:#fa9e22;
     }
@@ -207,21 +211,67 @@ nav{
         position: absolute;
         color: #fff;
         text-shadow: 1px 1px 5px #000;
-        bottom: 20px;
         right: 70px;
         left: 40px;
         z-index: 9;
+        bottom: -60px;
+        transition: bottom 0.2s ease-in-out;
 
         h3{
             font-size: 1.8em;
             text-overflow: ellipsis; 
             overflow: hidden; 
             white-space: nowrap;
+            margin-bottom: 15px;
         }
+    }
+    .user{
+        margin: 10px 0;
+        width: 100%;
+        float: left;
     }
     .rating{
         display: block;
+        img{
+            width: auto;
+            float: left;
+        }
+        p {
+            margin: 8px 10px;
+            float: left;
+        }
+        .fa-heart {
+            float: right;
+            color: #fff;
+            right: -30px;
+            bottom: 8px;
+            position: absolute;
+            font-size: 18px;
+            border-radius: 50px;
+            border: 2px solid;
+            padding: 14px;
+        }
+        .fa-star{
+            padding: 0px 2px 30px 2px;
+        }
     }
+    .card:hover {
+        bottom: 0px;
+
+        .fa-star{
+            padding: 0px 2px 10px 2px;
+        }
+
+        h3{
+            text-overflow: clip;
+            overflow: visible;
+            white-space: normal;
+        }
+        .user{
+            display: block;
+        }
+    }
+    
     .shadow{
         width: calc(100% - 30px);
         height: 100%;
@@ -241,7 +291,7 @@ nav{
     margin-right: 10px;
     
     .fa-bars {
-        vertical-align: sub;
+        vertical-align: -webkit-baseline-middle;
     }
 }
 .nav-mobile-open {
@@ -259,22 +309,109 @@ nav{
         padding: 10px;
     }
 }
+.show-nav-fixed{
+    display: none;
+}
+.nav-fixed{
+    background: #ffffff;
+    position: fixed;
+    top: 0px;
+    border-bottom: 1px solid;
+    width: 100%;
+    left: 0;
+
+    .logo{
+        img{
+            width: 45px;
+        }
+    }
+
+    nav{
+        margin: 15px 0 0 0;
+        float: left;
+    }
+    .col-sm-8{
+        width: 42%;
+    }
+    .col-xs-12{
+        width: 58%;
+    }
+    .search-icons{
+        margin: 10px 0;
+        float: right;
+    }
+    .margin-top-social{
+        margin: 10px 0;
+    }
+    .show-nav-fixed{
+        display: block;
+    }
+    li.show-nav-fixed{
+        display: inline;
+    }
+    .hidden-nav-fixed{
+        display: none !important;
+    }
+}
 @media screen and (max-width:1199px){
     .foodie .frame {
         height: 145px;
     }
 }
-@media screen and (max-width:991px){
-    .foodie .frame {
-        height: 105px;
+
+
+@media screen and (min-width:992px) and (max-width:1199px){
+    
+    .nav-fixed{
+        .search-icons .fas {
+            font-size: 25px;
+        }
+        .button{
+            padding: 6px 13px;
+            font-size: 13px;
+        }
+
+        nav ul li {
+            padding-right: 10px;
+        }
     }
 }
 
-#nav-mobile{
-    display: none;
-}
-
-@media screen and (max-width:768px){
+@media screen and (max-width:991px){
+    #nav{
+        margin-bottom: 0;
+    }
+    .icon {
+        float: right;
+        margin: 5px 0;
+    }
+    .hidden-sm{
+        display: none !important;        
+    }
+    .foodie .frame {
+        height: 105px;
+    }
+    .nav-fixed .col-sm-8 {
+        width: 100%;
+    }
+    .main-banner{
+        width: 100%;
+        h1 {
+            font-size: 1.5em;
+        }  
+        input[type="text"] {
+            padding: 10px 25px;
+            font-size: 13px;
+        }
+        .orange {
+            font-size: 12px;
+        }
+        .nota {
+            margin: 20px 25px 15px;
+            font-size: 14px;
+        }
+    } 
+    
     .foodie .frame {
         height: auto;
     }
@@ -283,30 +420,45 @@ nav{
     }
     
     #nav-mobile{
-        display: block;
+        display: block !important;
     }
 
     .nav {
-        background: #ccc;
-        margin: 10px -15px;
-        padding: 10px;
+        background: #e4e4e4;
+        margin: 10px 0;
 
-        div{
-            padding-left: 0;
-            padding-right: 0;
-        }
         img{
-            width: 40px;
-
+            width: 45px;
         }
+        ul{ 
+            li {
+                list-style: none;
+                display: inline;
+                padding-right: 10px;
+            }
+        }
+       
     }
     .logo{
-        width: 30%;
+        width: 40%;
         float: left;
+        img{
+            width: 40px;
+        }
     }
     .margin-top-social {
-        width: 70%;
+        width: 60%;
         float: left;
         margin-top: 10px;
     }
+    
+    .nav {    
+        .search-icons .fas {
+            font-size: 30px;
+        }
+    }
+}
+
+#nav-mobile{
+    display: none;
 }

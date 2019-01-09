@@ -31,6 +31,8 @@
     </div>
     <div class="row nav">
       <div id="nav">
+      <div class="container">
+        <div class="row">
       <div class="logo col-md-1">
           <div class="nav-mobile" id="nav-mobile">
               <i class="fas fa-bars"></i>
@@ -38,8 +40,8 @@
         <img src="img/cybercook.png" alt="cybercook" id="cybercook">
       </div>
       <div class="col-md-11 margin-top-social">
-        <div class="row" id="social">
-          <div class="col-xs-4 hidden-xs">
+        <div class="row">
+          <div class="col-xs-4 hidden-nav-fixed hidden-xs">
             <div class="social">
                 Siga-nos: 
               <a href=""><img src="img/facebook.png" alt="facebook"></a>
@@ -50,22 +52,25 @@
               <a href=""><img src="img/google+.png" alt="google plus"></a>
             </div>
           </div>
-          <div class="search-icons col-sm-8 text-right">
-              <div class="button red hidden-xs">Crie seu Livro</div>
-              <div class="button orange space hidden-xs">
-                <i class="fas fa-heart"></i>
-                Livro de Receitas
-              </div>
-              <div class="icon">
-              <i class="fas fa-bell"></i>
-                <span class="alert">1</span>
-              </div>
-              <div class="icon">
-                <i class="fas fa-search"></i>
-              </div>
+          <div class="search-icons col-sm-8 text-right" id="search-icons">
+            <div class="button red show-nav-fixed hidden-xs hidden-lg" id="cadastre">Cadastre-se</div>
+            <div class="button orange space hidden-xs show-nav-fixed hidden-lg" id="entrar">Entrar</div>
+            <div class="button red hidden-xs hidden-nav-fixed">Crie seu Livro</div>
+            <div class="button orange space hidden-xs hidden-nav-fixed">
+              <i class="fas fa-heart"></i>
+              Livro de Receitas
+            </div>
+            <div class="icon show-nav-fixed hidden-xs">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="icon">
+            <i class="fas fa-bell"></i>
+              <span class="alert">1</span>
+            </div>
+            <div class="icon">
+              <i class="fas fa-search"></i>
+            </div>
           </div>
-        </div>
-        <div class="row">
           <div class="col-xs-12">
             <nav class="hidden-xs">
               <ul>
@@ -73,18 +78,21 @@
                 <li><a href="">CookClub</a></li>
                 <li><a href="">#foodieFeed</a></li>
                 <li><a href="">#TeamCook</a></li>
-                <li><a href="">Vídeos</a></li>
-                <li><a href="">Pergunte à comunidade!</a></li>
+                <li class="show-nav-fixed"><a href="">Mais</a></li>
+                <li class="hidden-nav-fixed"><a href="">Vídeos</a></li>
+                <li class="hidden-nav-fixed"><a href="">Pergunte à comunidade!</a></li>
               </ul>
             </nav>
           </div>
         </div>
       </div>
+    </div>
+    </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row  hidden-xs">
       <div class="col-xs-12 text-center">
-        <div class="main-banner">
+        <div class="main-banner" id="main-banner">
           <h1>Encontre receitas deliciosas!</h1>
           <div>
             <input type="text" placeholder="Nome ou ingredientes">
@@ -112,22 +120,23 @@
     
       <div class="row">
         {{#each recipes}}
-          <article class="recipes col-xs-4">     
+          <article class="recipes col-md-4 col-sm-6 col-xs-12">     
             <div class="shadow"></div>
             <a href="{{ link }}" alt="{{ title }}">
               <div class="card">
                 <h3>{{ title }}</h3>
-                
-                {{#listRating rating}}              
+                        
                 <div class="rating">
-                  {{ rating }}                  
-                  <div class="hidden user">
-                    <img src="img/user.png" alt="usuário">
-                    <p>Elaine Monteiro</p>
-                    <i class="fas fa-heart"></i>
-                  </div>
+                {{#listRating rating}}      
+                  {{ rating }}             
+                {{/listRating}}     
+                <div class="user" id="user">
+                  <img src="img/user.png" alt="usuário">
+                  <p>Elaine Monteiro
+                      <i class="fas fa-heart"></i>
+                    </p>
                 </div>
-                {{/listRating}}
+              </div>
 
               </div>
               <img src="{{ image }}" alt="{{ title }}">

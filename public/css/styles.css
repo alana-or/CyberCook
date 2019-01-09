@@ -44,15 +44,18 @@ nav ul {
 nav ul li {
   list-style: none;
   display: inline;
-  padding-right: 30px;
+  padding-right: 28px;
 }
 nav ul li a {
   color: #e75024;
   font-size: 18px;
 }
 #nav {
-  background: #fff;
+  margin-bottom: 10px;
   z-index: 999;
+}
+.search-icons {
+  float: right;
 }
 .search-icons .fas {
   color: #fa9e22;
@@ -72,7 +75,7 @@ nav ul li a {
 .button {
   float: right;
   border-radius: 30px;
-  display: inline-block !important;
+  display: inline-block;
   padding: 7px 20px;
   cursor: pointer;
   color: #fff;
@@ -178,6 +181,7 @@ nav ul li a {
 .recipes {
   float: left;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 .recipes .fas {
   color: #fa9e22;
@@ -186,18 +190,61 @@ nav ul li a {
   position: absolute;
   color: #fff;
   text-shadow: 1px 1px 5px #000;
-  bottom: 20px;
   right: 70px;
   left: 40px;
   z-index: 9;
+  bottom: -60px;
+  transition: bottom 0.2s ease-in-out;
 }
 .recipes .card h3 {
   font-size: 1.8em;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  margin-bottom: 15px;
+}
+.recipes .user {
+  margin: 10px 0;
+  width: 100%;
+  float: left;
 }
 .recipes .rating {
+  display: block;
+}
+.recipes .rating img {
+  width: auto;
+  float: left;
+}
+.recipes .rating p {
+  margin: 8px 10px;
+  float: left;
+}
+.recipes .rating .fa-heart {
+  float: right;
+  color: #fff;
+  right: -30px;
+  bottom: 8px;
+  position: absolute;
+  font-size: 18px;
+  border-radius: 50px;
+  border: 2px solid;
+  padding: 14px;
+}
+.recipes .rating .fa-star {
+  padding: 0px 2px 30px 2px;
+}
+.recipes .card:hover {
+  bottom: 0px;
+}
+.recipes .card:hover .fa-star {
+  padding: 0px 2px 10px 2px;
+}
+.recipes .card:hover h3 {
+  text-overflow: clip;
+  overflow: visible;
+  white-space: normal;
+}
+.recipes .card:hover .user {
   display: block;
 }
 .recipes .shadow {
@@ -218,7 +265,7 @@ nav ul li a {
   margin-right: 10px;
 }
 .nav-mobile .fa-bars {
-  vertical-align: sub;
+  vertical-align: -webkit-baseline-middle;
 }
 .nav-mobile-open {
   position: fixed;
@@ -234,20 +281,97 @@ nav ul li a {
   float: left;
   padding: 10px;
 }
+.show-nav-fixed {
+  display: none;
+}
+.nav-fixed {
+  background: #ffffff;
+  position: fixed;
+  top: 0px;
+  border-bottom: 1px solid;
+  width: 100%;
+  left: 0;
+}
+.nav-fixed .logo img {
+  width: 45px;
+}
+.nav-fixed nav {
+  margin: 15px 0 0 0;
+  float: left;
+}
+.nav-fixed .col-sm-8 {
+  width: 42%;
+}
+.nav-fixed .col-xs-12 {
+  width: 58%;
+}
+.nav-fixed .search-icons {
+  margin: 10px 0;
+  float: right;
+}
+.nav-fixed .margin-top-social {
+  margin: 10px 0;
+}
+.nav-fixed .show-nav-fixed {
+  display: block;
+}
+.nav-fixed li.show-nav-fixed {
+  display: inline;
+}
+.nav-fixed .hidden-nav-fixed {
+  display: none !important;
+}
 @media screen and (max-width: 1199px) {
   .foodie .frame {
     height: 145px;
   }
 }
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .nav-fixed .search-icons .fas {
+    font-size: 25px;
+  }
+  .nav-fixed .button {
+    padding: 6px 13px;
+    font-size: 13px;
+  }
+  .nav-fixed nav ul li {
+    padding-right: 10px;
+  }
+}
 @media screen and (max-width: 991px) {
+  #nav {
+    margin-bottom: 0;
+  }
+  .icon {
+    float: right;
+    margin: 5px 0;
+  }
+  .hidden-sm {
+    display: none !important;
+  }
   .foodie .frame {
     height: 105px;
   }
-}
-#nav-mobile {
-  display: none;
-}
-@media screen and (max-width: 768px) {
+  .nav-fixed .col-sm-8 {
+    width: 100%;
+  }
+  .main-banner {
+    width: 100%;
+  }
+  .main-banner h1 {
+    font-size: 1.5em;
+  }
+  .main-banner input[type="text"] {
+    padding: 10px 25px;
+    font-size: 13px;
+  }
+  .main-banner .orange {
+    font-size: 12px;
+  }
+  .main-banner .nota {
+    margin: 20px 25px 15px;
+    font-size: 14px;
+  }
   .foodie .frame {
     height: auto;
   }
@@ -255,27 +379,36 @@ nav ul li a {
     display: none !important;
   }
   #nav-mobile {
-    display: block;
+    display: block !important;
   }
   .nav {
-    background: #ccc;
-    margin: 10px -15px;
-    padding: 10px;
-  }
-  .nav div {
-    padding-left: 0;
-    padding-right: 0;
+    background: #e4e4e4;
+    margin: 10px 0;
   }
   .nav img {
-    width: 40px;
+    width: 45px;
+  }
+  .nav ul li {
+    list-style: none;
+    display: inline;
+    padding-right: 10px;
   }
   .logo {
-    width: 30%;
+    width: 40%;
     float: left;
   }
+  .logo img {
+    width: 40px;
+  }
   .margin-top-social {
-    width: 70%;
+    width: 60%;
     float: left;
     margin-top: 10px;
   }
+  .nav .search-icons .fas {
+    font-size: 30px;
+  }
+}
+#nav-mobile {
+  display: none;
 }

@@ -48,23 +48,14 @@ function createHTML(petsData) {
   petsContainer.innerHTML = ourGeneratedHTML;
 }
 
-tNav = document.getElementById('nav').offsetWidth;
 
 function nav(){
     if(window.scrollY > 50){
-        document.getElementById('nav').style.width = tNav+"px";
-        document.getElementById('nav').style.position = "fixed";
-        document.getElementById('nav').style.top = 0;
-        document.getElementById('nav').style.borderBottom = "1px solid";
-        document.getElementById('social').style.display = "none";
-        document.getElementById('cybercook').style.width = "40px";
-        
-        
+        document.getElementById('nav').classList.add("nav-fixed");
+        // document.getElementById('container').classList.add("container");
     }else{        
-        document.getElementById('nav').style.position = "relative";
-        document.getElementById('nav').style.borderBottom = "none";
-        document.getElementById('social').style.display = "block";
-        document.getElementById('cybercook').style.width = "79px";
+        document.getElementById('nav').classList.remove("nav-fixed");
+        // document.getElementById('container').classList.remove("container");
     }
 }
 
