@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Kadwa', Georgia, serif;
+  font-style: normal;
 }
 .top {
   margin-top: 20px;
@@ -9,8 +10,20 @@
 .top img {
   width: 100%;
 }
+#cover {
+  background: #00000061;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: none;
+}
 a:hover {
   text-decoration: none;
+}
+#alert,
+#ok-suggestion {
+  cursor: pointer;
 }
 .alert {
   height: 18px;
@@ -25,6 +38,50 @@ a:hover {
   top: -5px;
   right: 28px;
   color: #fff;
+}
+.alert .box-arrow {
+  display: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -31px;
+  top: 20px;
+  z-index: 10;
+  border-bottom: 63px solid #fa9e22;
+  border-left: 40px solid transparent;
+}
+.alert .suggestion {
+  display: none;
+  width: 250px;
+  position: absolute;
+  left: 0;
+  top: 41px;
+  padding: 30px 20px;
+  margin-left: -185px;
+  background: #fa9e22;
+  color: #fff;
+  border-radius: 7px;
+  z-index: 10;
+}
+.alert .suggestion p {
+  margin: 10px;
+}
+.alert .suggestion strong {
+  font-size: 20px;
+}
+.alert .suggestion span {
+  font-size: 18px;
+  background: #fb6400;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: 15px;
+}
+.alert .suggestion i {
+  font-family: "Font Awesome 5 Free" !important;
+  background: transparent !important;
 }
 .text-center {
   text-align: center;
@@ -110,7 +167,34 @@ nav ul li a {
 }
 #nav {
   margin-bottom: 10px;
-  z-index: 999;
+  z-index: 8;
+}
+.fa-heart {
+  animation: 1s infinite beatHeart;
+}
+@keyframes beatHeart {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+#close,
+#close-notification {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
 }
 .search-icons {
   float: right;
@@ -126,6 +210,89 @@ nav ul li a {
 }
 .search-icons .fas + span {
   background: #e75024;
+}
+.search-icons #notifications {
+  position: absolute;
+  width: 320px;
+  display: none;
+  margin-right: 267px;
+}
+.search-icons #notifications .alert {
+  background: #e75024;
+  right: 162px;
+  font-size: 16px;
+  width: 30px;
+  position: absolute;
+  height: 28px;
+  top: 30px;
+}
+.search-icons #notifications p strong {
+  font-size: 16px;
+}
+.search-icons #notifications .active {
+  background: #fff;
+}
+.search-icons #notifications .active span {
+  color: #6d6d6d;
+}
+.search-icons #notifications > div {
+  float: left;
+  background: #ffffff61;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+.search-icons #notifications > div img {
+  float: left;
+  margin: 10px;
+}
+.search-icons #notifications > div p {
+  float: left;
+  width: 200px;
+  color: #000;
+  text-align: left;
+  font-size: 12px;
+  padding: 10px 0 0 0;
+}
+.search-icons #notifications > div span {
+  float: left;
+  color: #3e3e3e;
+  font-size: 12px;
+}
+.search-icons #livro {
+  margin-right: 128px;
+}
+.search-icons #livro,
+.search-icons #notifications {
+  position: absolute;
+  width: 320px;
+  display: none;
+  right: 0;
+  top: 60px;
+  padding: 30px 20px;
+  background: #f98e1b;
+  background-image: url(../img/background-box.png);
+  color: #fff;
+  background-repeat: no-repeat;
+  border-radius: 7px;
+  z-index: 9999;
+  text-align: center;
+}
+.search-icons #livro .img-arrow,
+.search-icons #notifications .img-arrow {
+  position: absolute;
+  margin-top: -50px;
+}
+.search-icons #livro > strong,
+.search-icons #notifications > strong {
+  width: 100%;
+  float: left;
+  padding: 10px 0 20px 0;
+  font-size: 18px;
+}
+.search-icons #livro .button,
+.search-icons #notifications .button {
+  margin: 20px 0 0px 0;
+  float: none;
 }
 .space {
   margin: 0 10px;
@@ -148,7 +315,7 @@ nav ul li a {
   background: #fa9e22;
 }
 .red {
-  background: #e75024;
+  background: #e75024 !important;
 }
 .social {
   color: #b9b9b9;
@@ -250,7 +417,7 @@ nav ul li a {
   text-shadow: 1px 1px 5px #000;
   right: 70px;
   left: 40px;
-  z-index: 9;
+  z-index: 7;
   bottom: -60px;
   transition: bottom 0.2s ease-in-out;
 }

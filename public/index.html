@@ -23,6 +23,8 @@
     </ul>
   </nav>
 
+  <div id="cover"></div>
+
   <div class="container">
     <div class="row">
       <div class="top col-md-10 col-xs-12 col-md-offset-1 text-center">
@@ -56,19 +58,46 @@
             <div class="button red show-nav-fixed hidden-xs hidden-lg" id="cadastre">Cadastre-se</div>
             <div class="button orange space hidden-xs show-nav-fixed hidden-lg" id="entrar">Entrar</div>
             <div class="button red hidden-xs hidden-nav-fixed">Crie seu Livro</div>
-            <div class="button orange space hidden-xs hidden-nav-fixed">
+            <div class="button orange space hidden-xs hidden-nav-fixed" id="livro-receitas">
               <i class="fas fa-heart"></i>
               Livro de Receitas
             </div>
-            <div class="icon show-nav-fixed hidden-xs">
+            <div class="icon show-nav-fixed hidden-xs" id="livro-receitas-heart">
               <i class="fas fa-heart"></i>
             </div>
-            <div class="icon">
+            <div class="icon" id="notification">
             <i class="fas fa-bell"></i>
               <span class="alert">1</span>
             </div>
             <div class="icon">
               <i class="fas fa-search"></i>
+            </div>
+            <div id="notifications">
+              <img src="img/curve-arrow.png" alt="curve-arrow" class="img-arrow">
+              <img src="img/close.png" alt="close" id="close-notification">
+              <span class="alert">1</span>
+              <img src="img/notification.png" alt="notification">
+              <strong>Notificações</strong>
+              <div class="active">
+                <img src="img/icon-logo.png" alt="icone do logo">
+                <p><strong>Cozinha CyberCook</strong> publicou um especial incrível para o seu Natal!</p>
+                <span>há 6 horas</span>
+              </div>
+              <div>
+                <img src="img/icon-logo.png" alt="icone do logo">
+                <p><strong>Cozinha CyberCook</strong> publicou um especial incrível para o seu Natal!</p>
+                <span>há 6 horas</span>
+              </div>
+              <p><strong>Participe da nossa comunidade!</strong><br>Faça amigos e acompanhe suas novidades em tempo real!</strong></p>
+              <div class="button red">Participe!</div>
+            </div>
+            <div id="livro">
+              <img src="img/curve-arrow.png" alt="curve-arrow" class="img-arrow">
+              <img src="img/close.png" alt="close" id="close">
+              <img src="img/book.png" alt="book">
+              <strong>Livro de Receitas</strong>
+              <p>Guarde suas receitas favoritas em um lugar só! Acesse do seu computador ou celular! Comece agora, é <strong>grátis!</strong></strong></p>
+              <div class="button red">Acesse aqui!</div>
             </div>
           </div>
           <div class="col-xs-12">
@@ -230,7 +259,16 @@
             <i class="fas fa-search"></i>
           </div>
           <div class="search">
-            <span class="question">Sugestão do Chef: <i class="alert">?</i></span>
+            <span class="question">Sugestão do Chef: 
+              <i class="alert"> <span id="alert">?</span>         
+                <span class="box-arrow" id="box-arrow"></span>        
+                <div class="suggestion" id="suggestion">
+                  <strong>Sugestão do Chef</strong> 
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at molestie nibh, a mollis libero. Nunc sit amet nisl sit amet.</p>
+                  <span id="ok-suggestion"><i class="fas fa-check"></i> ok, entendi</span>
+                </div>
+              </i>
+            </span>
           </div>
           <div>
             <span class="orange">Costela Marinada</span>

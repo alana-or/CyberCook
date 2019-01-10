@@ -15,17 +15,7 @@ ourRequest.onerror = function() {
 
 ourRequest.send();
 
-// Handlebars.registerHelper("calculateAge", function(birthYear) {
-//   var age = new Date().getFullYear() - birthYear;
-
-//   if (age > 0) {
-//     return age + " years old";
-//   } else {
-//     return "Less than a year old";
-//   }
-
-// });
-
+//gera as estrelas de acordo com a quantidade de 'likes'
 Handlebars.registerHelper('listRating', function(items) {
     var out = "";
     if(items){
@@ -39,24 +29,85 @@ Handlebars.registerHelper('listRating', function(items) {
     }
   });
 
-function createHTML(petsData) {
+//Cria o template
+function createHTML(Data) {
   var rawTemplate = document.getElementById("home").innerHTML;
   var compiledTemplate = Handlebars.compile(rawTemplate);
-  var ourGeneratedHTML = compiledTemplate(petsData);
+  var ourGeneratedHTML = compiledTemplate(Data);
 
-  var petsContainer = document.getElementById("app");
-  petsContainer.innerHTML = ourGeneratedHTML;
+  var Container = document.getElementById("app");
+  Container.innerHTML = ourGeneratedHTML;
 }
 
+function tela(){
+  if(window.scrollY > 30){
+      document.getElementById('nav').classList.add("nav-fixed");
+      document.getElementById('notifications').style.marginRight = "180px";   
+      
+      if(window.innerWidth < 1200){
+        document.getElementById('notifications').style.marginRight = "96px";  
+      }else{
+        document.getElementById('notifications').style.marginRight = "180px";   
+      }
 
-function nav(){
-    if(window.scrollY > 50){
-        document.getElementById('nav').classList.add("nav-fixed");
-        // document.getElementById('container').classList.add("container");
     }else{        
-        document.getElementById('nav').classList.remove("nav-fixed");
-        // document.getElementById('container').classList.remove("container");
-    }
+      document.getElementById('nav').classList.remove("nav-fixed");  
+      document.getElementById('notifications').style.marginRight = "275px";        
+  }  
 }
 
-window.addEventListener("scroll", nav);
+//Efeito de rolagem da página com menu fixo
+window.addEventListener("resize", tela);
+window.addEventListener("scroll", tela);
+
+//Efeito cover document
+document.getElementById('alert').addEventListener("click", function(){
+
+  document.getElementById('suggestion').style.display = "block";
+  document.getElementById('box-arrow').style.display = "block";
+  document.getElementById('cover').style.display = "block";
+
+});
+
+document.getElementById('ok-suggestion').addEventListener("click", function(){
+
+  document.getElementById('suggestion').style.display = "none";
+  document.getElementById('box-arrow').style.display = "none";
+  document.getElementById('cover').style.display = "none";
+
+});
+
+
+document.getElementById('livro-receitas').addEventListener("click", function(){
+
+  document.getElementById('livro').style.display = "block";
+
+});
+
+
+document.getElementById('close').addEventListener("click", function(){
+
+  document.getElementById('livro').style.display = "none";
+
+});
+
+document.getElementById('livro-receitas-heart').addEventListener("click", function(){
+
+  document.getElementById('livro').style.display = "block";
+
+});
+
+
+document.getElementById('close-notification').addEventListener("click", function(){
+
+  document.getElementById('notifications').style.display = "none";
+
+});
+
+
+document.getElementById('notification').addEventListener("click", function(){
+
+  document.getElementById('notifications').style.display = "block";
+
+});
+
