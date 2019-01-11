@@ -46,13 +46,16 @@ function tela(){
       
       if(window.innerWidth < 1200){
         document.getElementById('notifications').style.marginRight = "96px";  
+        document.getElementById('livro').style.marginRight = "50px";  
       }else{
         document.getElementById('notifications').style.marginRight = "180px";   
+        document.getElementById('livro').style.marginRight = "128px";  
       }
 
     }else{        
       document.getElementById('nav').classList.remove("nav-fixed");  
-      document.getElementById('notifications').style.marginRight = "275px";        
+      document.getElementById('notifications').style.marginRight = "275px";   
+      document.getElementById('livro').style.marginRight = "128px";       
   }  
 }
 
@@ -84,6 +87,49 @@ document.getElementById('livro-receitas').addEventListener("click", function(){
 
 });
 
+document.getElementById('crie').addEventListener("click", function(){
+
+  document.getElementById('login').style.display = "block";
+  document.getElementById('cover').style.display = "block";
+
+});
+
+document.getElementById('cadastre').addEventListener("click", function(){
+
+  document.getElementById('login').style.display = "block";
+  document.getElementById('cover').style.display = "block";
+
+});
+
+document.getElementById("close-login").addEventListener("click", function(){
+
+  document.getElementById('login').style.display = "none";
+  document.getElementById('cover').style.display = "none";
+
+});
+
+document.getElementById('time').addEventListener("click", function(){
+
+  document.getElementById('busca').style.display = "none";
+
+});
+
+document.getElementById('search').addEventListener("click", function(){
+
+  document.getElementById('busca').style.display = "block";
+
+});
+
+document.getElementById('cover').addEventListener("click", function(){
+
+  if(window.innerWidth < 992){
+    document.getElementById('nav-mobile-open').style.display = "none";
+    document.getElementById('cover').style.display = "none";
+  }else{
+    document.getElementById('login').style.display = "none";    
+    document.getElementById('cover').style.display = "none";
+  }
+});
 
 document.getElementById('close').addEventListener("click", function(){
 
@@ -111,3 +157,10 @@ document.getElementById('notification').addEventListener("click", function(){
 
 });
 
+
+document.getElementById('nav-mobile').addEventListener("click", function(){
+
+  document.getElementById('nav-mobile-open').style.display = "block";
+  document.getElementById('cover').style.display = "block";
+
+});

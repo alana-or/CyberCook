@@ -12,18 +12,87 @@
 </head>
 <body>
 
-  <nav class="nav-mobile-open hidden">
+  <div id="login">
+      <img src="img/close.png" alt="close" class="close" id="close-login">
+    <strong>Participe da comunidade mais deliciosa da internet</strong>
+    <img src="img/entrar-facebook.png" alt="Entrar com uma conta do facebook">
+    <img src="img/entrar-google.png" alt="Entrar com uma conta google">
+    <strong>ou</strong>
+    <input type="text" placeholder="Seu login ou e-mail">
+    <input type="password" placeholder="senha"> <i class="fas fa-eye"></i>
+    <a href="#">esqueci minha senha</a>    
+    <img class="acesse" src="img/acesse.png" alt="acesse">
+    <strong>Novo no CyberCook?<br>Faça parte, é grátis!</strong>
+    <div class="black">
+      <p>Ao fazer login você estará concordando com nossos<br><a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a></p>
+    </div>
+  </div>
+
+  <nav class="nav-mobile-open" id="nav-mobile-open">
+    <div class="social text-center">
+      <a href=""><img src="img/facebook.png" alt="facebook"></a>
+      <a href=""><img src="img/pinterest.png" alt="pinterest"></a>
+      <a href=""><img src="img/youtube.png" alt="youtube"></a>
+      <a href=""><img src="img/instagram.png" alt="instagram"></a>
+      <a href=""><img src="img/twitter.png" alt="twitter"></a>
+      <a href=""><img src="img/google+.png" alt="google plus"></a>
+    </div>
+    <br>
     <ul>
-      <li><a href="">Receitas</a></li>
-      <li><a href="">CookClub</a></li>
-      <li><a href="">#foodieFeed</a></li>
-      <li><a href="">#TeamCook</a></li>
-      <li><a href="">Vídeos</a></li>
-      <li><a href="">Pergunte à comunidade!</a></li>
+      <li><a href="#">Receitas</a> <i class="fas fa-sort-down"></i>
+        <ul class="sub">
+          <li><a href="#">Saladas</a></li>
+          <li><a href="#">Legumes</a></li>
+          <li><a href="#">Carnes</a></li>
+          <li><a href="#">Aves</a></li>
+          <li><a href="#">Bolos</a></li>
+          <li><a href="#">Massas</a></li>
+          <li><a href="#">Pães</a></li>
+          <li><a href="#">Risotos</a></li>
+          <li><a href="#">Lanches</a></li>
+          <li><a href="#">Doces</a></li>
+          <li><a href="#">Acompanhamentos</a></li>
+          <li><a href="#">Peixes e Futros do Mar</a></li>
+          <li><a href="#">Aperitivos e Antepastos</a></li>
+        </ul>
+      </li>
+      <li><a href="#">CookClub</a></li>
+      <li><a href="#">#foodieFeed</a></li>
+      <li><a href="#">#TeamCook</a> <i class="fas fa-sort-down"></i>  
+        <ul class="sub">
+          <li><a href="#">Bom gosto</a></li>                      
+          <li><a href="#">Limão com Alecrim</a></li>
+          <li><a href="#">Marinando</a></li>
+          <li><a href="#">Miolos Fritos</a></li>
+          <li><a href="#">Sanduba Insano</a></li>
+          <li><a href="#">Só penso em comida</a></li>
+          <li><a href="#">Limão com Alecrim</a></li>
+          <li><a href="#">Web à Milanesa</a></li>
+          <li><a href="#">Todos os canais</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Vídeos</a> <i class="fas fa-sort-down"></i>  
+        <ul class="sub">
+            <li><a href="#">Como Fazer (receitas passo a passo)</a></li>
+            <li><a href="#">Receitas de Micro-ondas</a></li>
+            <li><a href="#">Vídeo-técnicas culinárias</a></li>
+            <li><a href="#">#TeamCook</a></li>
+            <li><a href="#">Nosso canal no Youtube <i class="fas fa-external-link-alt"></i></a></li>
+          </ul>
+      </li>
+      <li><a href="#">Pergunte à comunidade!</a></li>
+      <li><a href="#">Mais</a> <i class="fas fa-sort-down"></i>
+        <ul class="sub"> 
+            <li><a href="#">App de receitas</a></li>
+            <li><a href="#">Dicas</a></li>
+            <li><a href="#">Glossáro</a></li>
+            <li><a href="#">Ajuda</a></li>
+          </ul>
+      </li>
     </ul>
   </nav>
 
-  <div id="cover"></div>
+  <div id="cover"><img src="img/close.png" alt="close"></div>
 
   <div class="container">
     <div class="row">
@@ -42,6 +111,11 @@
         <img src="img/cybercook.png" alt="cybercook" id="cybercook">
       </div>
       <div class="col-md-11 margin-top-social">
+        <div id="busca">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Digite o nome ou ingredientes...">
+            <i class="fas fa-times" id="time"></i>
+        </div>
         <div class="row">
           <div class="col-xs-4 hidden-nav-fixed hidden-xs">
             <div class="social">
@@ -57,7 +131,7 @@
           <div class="search-icons col-sm-8 text-right" id="search-icons">
             <div class="button red show-nav-fixed hidden-xs hidden-lg" id="cadastre">Cadastre-se</div>
             <div class="button orange space hidden-xs show-nav-fixed hidden-lg" id="entrar">Entrar</div>
-            <div class="button red hidden-xs hidden-nav-fixed">Crie seu Livro</div>
+            <div class="button red hidden-xs hidden-nav-fixed" id="crie">Crie seu Livro</div>
             <div class="button orange space hidden-xs hidden-nav-fixed" id="livro-receitas">
               <i class="fas fa-heart"></i>
               Livro de Receitas
@@ -65,11 +139,11 @@
             <div class="icon show-nav-fixed hidden-xs" id="livro-receitas-heart">
               <i class="fas fa-heart"></i>
             </div>
-            <div class="icon" id="notification">
+            <div class="icon hidden-xs" id="notification">
             <i class="fas fa-bell"></i>
               <span class="alert">1</span>
             </div>
-            <div class="icon">
+            <div class="icon" id="search">
               <i class="fas fa-search"></i>
             </div>
             <div id="notifications">
@@ -107,72 +181,100 @@
                   <div class="sub">                      
                     <p>Categorias em destaque</p>
                     <span>
-                      <img src="img/nav/saladas.png" alt="saladas">
-                      <p>Salada</p>
+                      <a href="">
+                        <img src="img/nav/saladas.png" alt="saladas">
+                        <p>Salada</p>
+                      </a>
                     </span>                      
                     <span>
-                      <img src="img/nav/legumes.png" alt="legumes">
-                      <p>Legumes</p>
+                      <a href="">
+                        <img src="img/nav/legumes.png" alt="legumes">
+                        <p>Legumes</p>
+                      </a>
                     </span>
                       
                     <span>
-                      <img src="img/nav/carnes.png" alt="carnes">
-                      <p>Carnes</p>
+                      <a href="">
+                        <img src="img/nav/carnes.png" alt="carnes">
+                        <p>Carnes</p>
+                      </a>
                     </span>
                       
                     <span>
-                      <img src="img/nav/aves.png" alt="aves">
-                      <p>Aves</p>
+                      <a href="">
+                        <img src="img/nav/aves.png" alt="aves">
+                        <p>Aves</p>
+                      </a>
                     </span>
                       
                     <span>
-                      <img src="img/nav/bolos.png" alt="bolos">
-                      <p>Bolos</p>
+                      <a href="">
+                        <img src="img/nav/bolos.png" alt="bolos">
+                        <p>Bolos</p>
+                      </a>
                     </span>
                       
                     <span>
-                      <img src="img/nav/massas.png" alt="massas">
-                      <p>Massas</p>
+                      <a href="">
+                        <img src="img/nav/massas.png" alt="massas">
+                        <p>Massas</p>
+                      </a>
                     </span>
                       
                     <span>
-                      <img src="img/nav/paes.png" alt="Pães">
-                      <p>Pães</p>
+                      <a href="">
+                        <img src="img/nav/paes.png" alt="Pães">
+                        <p>Pães</p>
+                      </a>
                     </span>
                       
-                    <span>
-                      <img src="img/nav/risotos.png" alt="Risotos">
-                      <p>Risotos</p>
+                    <span>                      
+                      <a href="">
+                        <img src="img/nav/risotos.png" alt="Risotos">
+                        <p>Risotos</p>
+                      </a>
+                    </span>
+                    
+                    <span>                      
+                      <a href="">
+                        <img src="img/nav/lanches.png" alt="Lanches">
+                        <p>Lanches</p>
+                      </a>
                     </span>
                     
                     <span>
-                      <img src="img/nav/lanches.png" alt="Lanches">
-                      <p>Lanches</p>
+                      <a href="">
+                        <img src="img/nav/doces.png" alt="Doces">
+                        <p>Doces</p>
+                      </a>
                     </span>
                     
                     <span>
-                      <img src="img/nav/doces.png" alt="Doces">
-                      <p>Doces</p>
+                      <a href="">
+                        <img src="img/nav/acompanhamentos.png" alt="Acompanhamentos">
+                        <p>Acompanha-<br>mentos</p>
+                      </a>
                     </span>
                     
                     <span>
-                      <img src="img/nav/acompanhamentos.png" alt="Acompanhamentos">
-                      <p>Acompanha-<br>mentos</p>
+                      <a href="">
+                        <img src="img/nav/peixes.png" alt="Peixes e Frutos do Mar">
+                        <p>Peixes e Frutos do Mar</p>
+                      </a>
                     </span>
                     
                     <span>
-                      <img src="img/nav/peixes.png" alt="Peixes e Frutos do Mar">
-                      <p>Peixes e Frutos do Mar</p>
+                      <a href="">
+                        <img src="img/nav/aperitivos.png" alt="Aperitivos e Antepastos">
+                        <p>Aperitivos e Antepastos</p>
+                      </a>
                     </span>
                     
                     <span>
-                      <img src="img/nav/aperitivos.png" alt="Aperitivos e Antepastos">
-                      <p>Aperitivos e Antepastos</p>
-                    </span>
-                    
-                    <span>
-                      <img src="img/nav/mais.png" alt="Veja todas as Categorias">
-                      <p>Veja todas as Categorias</p>
+                      <a href="">
+                        <img src="img/nav/mais.png" alt="Veja todas as Categorias">
+                        <p>Veja todas as Categorias</p>
+                      </a>
                     </span>
                   </div>
                 </li>
@@ -182,40 +284,58 @@
                   <div class="sub">                    
                     <p>Canais</p>
                     <span>
-                      <img src="img/nav/canal.png" alt="Bom gosto">
-                      <p>Bom gosto</p>
+                      <a href="">
+                        <img src="img/nav/canal.png" alt="Bom gosto">
+                        <p>Bom gosto</p>
+                      </a>
+                    </span>
+                    <span>                      
+                      <a href="">
+                        <img src="img/nav/canal.png" alt="Limão com Alecrim">
+                        <p>Limão com Alecrim</p>
+                      </a>
                     </span>
                     <span>
-                      <img src="img/nav/canal.png" alt="Limão com Alecrim">
-                      <p>Limão com Alecrim</p>
+                      <a href="">
+                        <img src="img/nav/canal.png" alt="Marinando">
+                        <p>Marinando</p>
+                      </a>
                     </span>
                     <span>
-                      <img src="img/nav/canal.png" alt="Marinando">
-                      <p>Marinando</p>
+                      <a href="">
+                        <img src="img/nav/canal.png" alt="Miolos Fritos">
+                        <p>Miolos Fritos</p>
+                      </a>
                     </span>
                     <span>
-                      <img src="img/nav/canal.png" alt="Miolos Fritos">
-                      <p>Miolos Fritos</p>
+                      <a href="">
+                        <img src="img/nav/canal.png" alt="Sanduba Insano">
+                        <p>Sanduba Insano</p>
+                      </a>
                     </span>
                     <span>
-                      <img src="img/nav/canal.png" alt="Sanduba Insano">
-                      <p>Sanduba Insano</p>
+                      <a href="">
+                        <img src="img/nav/canal.png" alt="Só penso em comida">
+                        <p>Só penso em comida</p>
+                      </a>
                     </span>
                     <span>
-                      <img src="img/nav/canal.png" alt="Só penso em comida">
-                      <p>Só penso em comida</p>
+                      <a href="">
+                        <img src="img/nav/canal.png" alt="Limão com Alecrim">
+                        <p>Limão com Alecrim</p>
+                      </a>
                     </span>
                     <span>
-                      <img src="img/nav/canal.png" alt="Limão com Alecrim">
-                      <p>Limão com Alecrim</p>
+                      <a href="">
+                        <img src="img/nav/canal.png" alt="Web à Milanesa">
+                        <p>Web à Milanesa</p>
+                      </a>
                     </span>
                     <span>
-                      <img src="img/nav/canal.png" alt="Web à Milanesa">
-                      <p>Web à Milanesa</p>
-                    </span>
-                    <span>
-                      <img src="img/nav/mais-canais.png" alt="Todos os canais">
-                      <p>Todos os canais</p>
+                        <a href="">
+                          <img src="img/nav/mais-canais.png" alt="Todos os canais">
+                          <p>Todos os canais</p>
+                        </a>
                     </span>                      
                   </div>
                 </li>
